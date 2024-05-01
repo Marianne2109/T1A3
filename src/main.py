@@ -6,15 +6,13 @@
 #Import from functions.py
 from functions import myhabits_htracker, template_htracker, database_htracker, stats_htracker
 
-file_name = "myhabits.csv"
 
-if (not os.path.isfile(file_name)):
 
 print("Welcome to Habits Tracker\n")
 
 def main_menu():
-    print("1. My habits list")
-    print("2. Templates")
+    print("Select an option:\n 1. My habits list")
+    print("2. Create new list")
     print("3. Habits database")
     print("4. View Statistics")
     print("5. Quit Application")
