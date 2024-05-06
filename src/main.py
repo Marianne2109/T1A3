@@ -2,6 +2,8 @@
 #System packages
 import csv
 import os.path 
+import datetime as datetime
+
 
 #External packages
 
@@ -10,6 +12,9 @@ from functions import add_habits, edit_delete_log, activity_overview, habits_dat
 
 
 file_name = "habits.csv"
+
+#File path for function habits_database to access csv file
+habits_database_file_path = ".src/habits_database.csv"
 
 #Check of CSV exist and create one if it dooesn't 
 if not os.path.isfile(file_name):
@@ -20,7 +25,7 @@ if not os.path.isfile(file_name):
 
 #Main function, run the application includes welcome message
 
-print("Welcome to Habits Tracker\n")
+print("\n\n-----Welcome to your Habits Tracker-----\n")
 
 #Main menu function, this is the main menu of the terminal application. 
 #The user is prompted to enter input depending on what they wish to do.
@@ -45,7 +50,7 @@ while user_selection != 5:
     elif user_selection == 3:
         activity_overview(file_name)
     elif user_selection == 4:
-        habits_database()
+        habits_database(habits_database)
     elif user_selection == 5:
         print("Are you leaving?")
     else:
