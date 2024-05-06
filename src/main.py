@@ -8,6 +8,7 @@ import os.path
 #Import from functions.py
 from functions import add_habits, edit_delete_log, activity_overview, habits_database
 
+
 file_name = "habits.csv"
 
 #Check of CSV exist and create one if it dooesn't 
@@ -29,7 +30,6 @@ def main_menu():
     print("2. Edit, Delete or Mark habit") #Submenu
     print("3. Activity overview") #shows table with all saved habits
     print("4. Habits database") 
-    #print("5. View Statistics")
     print("5. Quit Application")
     
 user_selection = ""
