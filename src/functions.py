@@ -6,7 +6,9 @@ import datetime as datetime
 #External Packages
 from prettytable import PrettyTable
 
+
 file_name = "habits.csv"
+
 habits_database_file_path = "src/habits_database.csv".lower()
 
 
@@ -125,7 +127,7 @@ def edit_habit(file_name):
     
 #Function to delete a habit. This will delete the row completely because it's based on the habit_name.
 #It'll iterate through the rows until a matching row and then remove that row.
-def delete_habit(file_name, habit_name):
+def delete_habit(file_name):
     habit_name = input("Type in the habit that you'd like to delete: ").lower()
     rows = []
     try:
