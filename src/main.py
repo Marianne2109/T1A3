@@ -30,12 +30,12 @@ print("\n\n-----Welcome to your Habits Tracker-----\n")
 #Main menu function, this is the main menu of the terminal application. 
 #The user is prompted to enter input depending on what they wish to do.
 def main_menu():
-    print("Please choose from the menu below: \n")
+    print("\n Please choose from the menu below: \n")
     print("1. Add new habits") #user is asked to enter one or more habits to save 
     print("2. Edit, Delete or Mark habit") #Submenu
-    print("3. Activity overview") #shows table with all saved habits
-    print("4. Habits database") 
-    print("5. Quit Application")
+    print("3. Activity overview") #shows table with all saved habits and the times it has been marked or logged as complete
+    print("4. Habits database") #displays an inbuilt csv file as a table. This is to provide example of habits only.
+    print("5. Quit Application") #break loop and exit application
     
 user_selection = ""
 
@@ -52,7 +52,8 @@ while user_selection != 5:
     elif user_selection == 4:
         habits_database(habits_database_file_path)
     elif user_selection == 5:
-        print("Are you leaving?")
+        print("You are now leaving the application. See you next time!")
+        break
     else:
         print("Invalid option, please try again by entering an option from 1-5")  
         
