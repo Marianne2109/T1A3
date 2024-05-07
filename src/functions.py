@@ -67,9 +67,9 @@ def edit_delete_log(file_name):
         user_selection = int(input("Enter your choice: "))
         
         if user_selection == 1:
-            print("You selected the option to Edit an existing habit")
+            edit_habit(file_name)
         elif user_selection ==2:
-            print("You selectec the option to Delete an existing habit")
+            delete_habit(file_name)
         elif user_selection ==3:
             mark_habit(file_name)
         elif user_selection ==4:
@@ -77,6 +77,32 @@ def edit_delete_log(file_name):
             break
         else:
             print("Invalid option. Please try again by entering an option from 1-4")
+
+def edit_habit(file_name):
+    habit_name = input("What habit would you like to edit?: ")
+    print("Now enter the new details for this habit: ")
+    
+    new_habit_name = input("Enter the new name: ")
+    
+    new_start_date = input("Enter the new start date (YYYY/MM/DD): ")
+    
+    
+    
+#Function to delete a habit. This will delete the row completely because it's based on the habit_name.
+#It'll iterate through the rows until a matching row and then remove that row.
+def delete_habit(file_name, habit_name):
+    habit_name = input("Type in the habit that you'd like to delete: ")
+    rows = []
+    with open (file_name, "r") as f:
+        reader = csv.reader(f)
+        for row in reader:
+            if row[0] != habit_name:
+                rows.append(row)
+                
+    with open(file_name, "w") as f:
+        writer = csv.writer(f)
+        writer.writerows(rows)
+    
         
 #Function to mark a habit when completed and save marked habits to csv file   
 def mark_habit(file_name):
@@ -105,26 +131,24 @@ def activity_overview(file_name):
     print("See the table below for all your current habits")
     table = PrettyTable()
     table.field_names = ["Habit", "Log"]
-    with open("habits.csv", "r") as f:
+    with open(file_name, "r") as f:
         reader = csv.reader(f)
         for row in reader:
             table.add_row([row[0], row[3]])         
     print(table)
     
 
-
-def habits_database(habits_database):
-    print("See list of habits to get some ideas of what you can track")
-    print("You can add more habit to this list so you can remember in the future")    
+#Function to print a table with a number of habits that can be tracked. This CSV comes with the program and the user can 
+#use as a reference for habits that can be tracked.
+def habits_database(file_path):
+    print("See list of habits to get some ideas of what you can track")  
     table= PrettyTable()
-    with open (habits_database, "r") as f:
+    with open (file_path, "r") as f:
         reader = csv.reader(f)
         for row in reader:
             table.add_row([row[0]])
     print(table)
-            
+
         
-    #with open(habits_database, "r") as file:
-#This function will display a csv file with a list of random habits that can be tracked as reference
-#It will have the option to add habit to the list for future reference 
+        
 
