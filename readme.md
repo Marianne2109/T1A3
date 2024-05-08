@@ -14,25 +14,30 @@
 
 ## Help Documentation
 ### Dependencies and download:
-* You will need to have Pyhon3 installed. You can check if Python3 is installed by opening the terminal and entering `python3 –version`. If python is not installed, go to the oficial website to download. 
+* You will need to have Pyhon3 installed. You can check if Python3 is installed by opening the terminal and entering ```python3 –version```. If python is not installed, go to the oficial website to download. 
 * Other dependencies will be installed by virtual environment - see installation
 * Download the ZIP file from the source repository. Then open/unzip file.
 
 ### Installation:
 * Open a standalone terminal from the command line. 
+
 * Clone the GitHub repository from SSH or HTTPS<br>
   - Via SSH:<br>
-  `git@github.com:Marianne2109/T1A3.git`
+  ```git clone git@github.com:Marianne2109/T1A3.git```
 
   - Via HTTPS:<br>
-  `https://github.com/Marianne2109/T1A3.git`
+  ```git clone https://github.com/Marianne2109/T1A3.git```
 
 * From current location navigate to `/src` directory in the cloned repository<br>
-       `cd T1A3-TerminalApplication/src`
+  ```cd T1A3-TerminalApplication/src```
 
-* Enter `./run.sh` to set up the virtual environment and run the application. 
+* Enter to set up the virtual environment and run the application, enter: <br>
+  ```./run.sh```
 
-* If you encounter issues try enter `chmod +x run.sh` then enter `./run.sh` again.
+* If you encounter issues try enter: <br>
+  ```chmod +x run.sh``` 
+  then enter again <br>
+  ```./run.sh```
 
 * The rest of the dependencies should be installed by the program. 
 
