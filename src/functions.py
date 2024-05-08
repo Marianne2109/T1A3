@@ -94,17 +94,16 @@ def edit_delete_log(file_name):
 #Function to edit a habit and the update the changes in the CSV file
 def edit_habit(file_name):
     habit_name = input("What habit would you like to edit?: ").lower()
-    print("Now, enter the new details for this habit: \n")   
     habit_list = []
+     
     try:
         with open (file_name, "r") as f:
             reader = csv.reader(f)
-            for row in reader:
-                habit_list.append(row)
+            habit_list = list(reader)
     
         index = None
-        for i, row in enumerate (habit_list):
-            if row[0].lower == habit_name.lower():
+        for i, row in enumerate(habit_list):
+            if row[0].lower() == habit_name:
                 index = i
                 break
  
@@ -118,7 +117,8 @@ def edit_habit(file_name):
     #Write edited habits back to CSV file
             with open(file_name, "w") as f:
                 writer = csv.writer(f) 
-                writer.writerows([habit_list])
+                writer.writerows(habit_list)
+                
             print("Habit updated successfully!")
         else:
             print("Habit not found.")
