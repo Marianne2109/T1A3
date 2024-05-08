@@ -10,7 +10,7 @@
 
 ## Links
 - GitHub repo:
-- Trello board:
+- [Trello board](https://trello.com/b/1KoC9qTa/t1a3-terminalapplication)
 
 ## Help Documentation
 ### Dependencies and download:
@@ -92,10 +92,15 @@ This is option 4 from the main menu. The purpose of this function is to serve as
 
 
 ## Implementation Plan
+The implementation plan included an analysis of the feautures  of the application and feasibility for me at my current level to  be able to achieve my plan. 
+This included the use of pseudocode and implementation of a Trello board (link provided) where I created cards and checklists for each feature of the application. The card included a deadline date. I was behind in many areas but having the board was of tremendous help for accountability and efficiency. 
 
 ## Testing
 
 ## References
+* Python datetime module 2019, GeeksforGeeks, viewed May 2024, <https://www.geeksforgeeks.org/python-datetime-module/>.
+* Steps to Write and Execute a Shell Script - javatpoint n.d., www.javatpoint.com, viewed May 2024, <https://www.javatpoint.com/steps-to-write-and-execute-a-shell-script>.
+* van Rossum, G, Warsaw, B & Coghlan, N 2001, PEP 8 – Style Guide for Python Code, peps.python.org, viewed May 2024, <https://peps.python.org/pep-0008/>.
 
 
 
