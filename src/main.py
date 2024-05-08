@@ -13,7 +13,7 @@ from functions import add_habits, edit_delete_log, activity_overview, habits_dat
 
 file_name = "habits.csv"
 
-#File path for function habits_database to access csv file
+
 habits_database_file_path = "src/habits_database.csv"
 
 #Check of CSV exist and create one if it dooesn't 
@@ -23,8 +23,6 @@ if not os.path.isfile(file_name):
 
 
 
-#Main function, run the application includes welcome message
-
 print("\n\n-----Welcome to your Habits Tracker-----\n")
 
 #Main menu function, this is the main menu of the terminal application. 
@@ -32,7 +30,7 @@ print("\n\n-----Welcome to your Habits Tracker-----\n")
 def main_menu():
     print("\n Please choose from the menu below: \n")
     print("1. Add new habits") #user is asked to enter one or more habits to save 
-    print("2. Edit, Delete or Mark habit") #Submenu
+    print("2. Edit, Delete or Mark habit") #this option will display a submenu
     print("3. Activity overview") #shows table with all saved habits and the times it has been marked or logged as complete
     print("4. Habits database") #displays an inbuilt csv file as a table. This is to provide example of habits only.
     print("5. Quit Application") #break loop and exit application

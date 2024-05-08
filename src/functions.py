@@ -6,11 +6,13 @@ import datetime as datetime
 #External Packages
 from prettytable import PrettyTable
 
-
+#Global Variables
 file_name = "habits.csv"
-
 habits_database_file_path = "src/habits_database.csv".lower()
 
+#General error handling function
+def handle_error(exception):
+    print("Oops! It looks like something went wrong. Please try again.")
 
 #Function to create a new habit and append to the CSV file
 #User will be prompted to enter a habit name, date to start tracking and frequency they wish to record the habit.
@@ -49,8 +51,8 @@ def add_habits(file_name):
         with open(file_name, "a") as f:
             writer = csv.writer(f) 
             writer.writerow([habit_name, start_date, frequency, ""])
-    except Exception as e:
-        print("Oops! It looks like something went wrong. Please try again.")
+    except Exception:
+        handle_error
         
 
 #Function to read habits.csv data
@@ -86,8 +88,8 @@ def edit_delete_log(file_name):
                 break
             else:
                  print("Invalid option. Please try again by entering an option from 1-4")
-    except:
-        print("Oops! It looks like something went wrong. Please try again.") 
+    except Exception:
+        handle_error
             
 #Function to edit a habit and the update the changes in the CSV file
 def edit_habit(file_name):
@@ -120,15 +122,15 @@ def edit_habit(file_name):
             print("Habit updated successfully!")
         else:
             print("Habit not found.")
-    except:
-        print("Oops! It looks like something went wrong. Please try again.") 
+    except Exception:
+        handle_error 
             
     
     
 #Function to delete a habit. This will delete the row completely because it's based on the habit_name.
 #It'll iterate through the rows until a matching row and then remove that row.
 def delete_habit(file_name):
-    habit_name = input("Type in the habit that you'd like to delete: ").lower()
+    habit_name = input("Type in the habit that you want to delete: ").lower()
     rows = []
     try:
         with open (file_name, "r") as f:
@@ -140,8 +142,9 @@ def delete_habit(file_name):
         with open(file_name, "w") as f:
             writer = csv.writer(f)
             writer.writerows(rows)
-    except:
-        print("Oops! It looks like something went wrong. Please try again.")
+            print("The habit has been successfully deleted \n")
+    except Exception:
+        handle_error
       
         
 #Function to mark a habit when it has been completed and save marked habits to csv file.
@@ -175,8 +178,8 @@ def mark_habit(file_name):
         with open(file_name, "w") as f:
             writer = csv.writer(f)
             writer.writerows(habit_list)
-    except Exception as e:
-        print("Oops! It looks like something went wrong. Please try again.")
+    except Exception:
+       handle_error
     
 
 #Function to print the data from the habits.csv file as a table. The table will display the habit column and marked columm 
@@ -191,8 +194,8 @@ def activity_overview(file_name):
             for row in reader:
                 table.add_row([row[0], row[3]])         
         print(table)
-    except:
-        print("Oops! It looks like something went wrong. Please try again.")
+    except Exception:
+        handle_error
 
 #Function to print a table with names of habits that can be tracked. This CSV comes with the program to provide examples only.
 def habits_database(habits_database_file_path):
@@ -205,8 +208,8 @@ def habits_database(habits_database_file_path):
             for row in reader:
                 table.add_row([row[0]])
         print(table)
-    except:
-        print("Oops! It looks like something went wrong. Please try again.")
+    except Exception:
+        handle_error
         
         
 
