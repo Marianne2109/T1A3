@@ -1,4 +1,8 @@
 # Terminal Application
+The purpose of this project is to demostrate my current skills using Pyhton. For this project I've chosen to develop a Habits Tracker. The application allows the user to create a list of habits and record when a habit has been done. The data is obtain by user input in the command line. It includes features like add habits, edit, delete and mark habits. It includes a feature to print the current habits list as a table to easily display the habits and log activity. The application comes with a predetermined list of habit to use as a reference of habits that can be tracked. 
+
+*Please note that before the submission I deleted the habits.csv file, therefore, when you start the app it will create a blank csv file for the user to populate. I've saved a previous list of habits in the test folder `docs/test`
+
 ## Content
 1. Links
 2. Help Documentation
@@ -9,7 +13,7 @@
 7. References
 
 ## Links
-- GitHub repo:
+- [GitHub repo](https://github.com/Marianne2109/T1A3)
 - [Trello board](https://trello.com/b/1KoC9qTa/t1a3-terminalapplication)
 
 ## Help Documentation
@@ -88,14 +92,21 @@ After the rows have been added, using the `print()` function the data is display
 The function is wrapped in a try-except block for ErrorHandling.
 
 * **Habits Database:** <br>
-This is option 4 from the main menu. The purpose of this function is to serve as a reference for users to see examples of habits and help with ideas of habits they can track. The data is displayed as a table to make it visually appealing. It uses the csv.reader to read the data from a predefined csv file. The data is passed to PrettyTable printed as a table using the function `print()`. 
+This is option 4 from the main menu. The purpose of this function is to serve as a reference for users to see examples of habits and help with ideas of habits they can track. The data is displayed as a table to make it visually appealing. It uses the csv.reader to read the data from a predefined csv file. The data is passed to PrettyTable printed as a table using the function `print()`.
 
+* The application uses three system packages and one external package
+  * System Packages:
+    * csv
+    * os.path
+    * datetime
+  * External Package:
+    * PrettyTable (v.3.10.0)
 
 ## Implementation Plan
 The implementation plan included an analysis of the feautures  of the application and feasibility for me at my current level to  be able to achieve my plan. 
 This included the use of pseudocode and implementation of a Trello board (link provided) where I created cards and checklists for each feature of the application. The card included a deadline date. I was behind in many areas but having the board was of tremendous help for accountability and efficiency. 
-
-## Testing
+See screenshots of this projects [trello board](https://github.com/Marianne2109/T1A3/tree/main/docs/trello_screenshot) <br> 
+```./T1A3-TerminalApplication/docs/trello_screenshot```
 
 ## References
 * Python datetime module 2019, GeeksforGeeks, viewed May 2024, <https://www.geeksforgeeks.org/python-datetime-module/>.
