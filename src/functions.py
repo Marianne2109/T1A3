@@ -162,7 +162,7 @@ def mark_habit(file_name):
                 else:
                     habit_found = True
                     if str(datetime.datetime.now()).split(" ")[0] != row[-1]:
-                        count = int(row[3]) + 1
+                        count = int(row[3]) + 1 if row[3] else 1
                         row[3] = str(count)
                         row[-1] = str(datetime.datetime.now()).split(" ")[0] 
                         habit_list.append(row)

@@ -1,13 +1,15 @@
 #!/bin/bash
 
-check if python3 is installed
+#create a virtual environment
 python3 -m venv .venv
 
-check if venv already exists
+#activate the virtual environment
 source .venv/bin/activate
 
+#install the required packages
 pip3 install -r requirements.txt
 
 clear
 
-python3 main.pyw
+#run the main.py file
+python3 main.py
