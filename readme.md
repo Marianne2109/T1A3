@@ -9,8 +9,7 @@ The purpose of this project is to demostrate my current skills using Pyhton. For
 3. Code style guide
 4. Features and Functionality
 5. Implementation Plan
-6. Testing
-7. References
+6. References
 
 ## Links
 - [GitHub repo](https://github.com/Marianne2109/T1A3)
