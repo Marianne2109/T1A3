@@ -16,6 +16,7 @@
 ### Dependencies and download:
 * You will need to have Pyhon3 installed. You can check if Python3 is installed by opening the terminal and entering ```python3 –version```. If python is not installed, go to the oficial website to download. 
 * Other dependencies will be installed by virtual environment - see installation
+  * The external package used is `PrettyTable` 3.10.0
 * Download the ZIP file from the source repository. Then open/unzip file.
 
 ### Installation:
@@ -31,10 +32,10 @@
 * From current location navigate to `/src` directory in the cloned repository<br>
   ```cd T1A3-TerminalApplication/src```
 
-* Enter to set up the virtual environment and run the application, enter: <br>
+* To set up the virtual environment and run the application, enter: <br>
   ```./run.sh```
 
-* If you encounter issues try enter: <br>
+* If you encounter issues try entering: <br>
   ```chmod +x run.sh``` 
   then enter again <br>
   ```./run.sh```
@@ -45,6 +46,12 @@
 
 ## Code style guide
 The code for this application was written using [PEP 8 - Style Guide for Python](https://peps.python.org/pep-0008/) 
+PEP 8 is the official style guide for Python code. Some key points include:
+* Indentention: Use 4 spaces per indentention level.
+* Line lenght of maximum 79 characters.
+* Avoid extraneous whitespace immediately inside parenthesis, brackets or braces; before comma, semicolon or colon.
+* Use of `CamelCase` and `lowercase_with_underscore` for variable names.
+Following PEP 8 ensures that the code is consistent and easy to read.
 
 ## Features and Functionality
 There are five features including the main menu and three other features from a ‘submenu’. <br>
@@ -85,8 +92,11 @@ This is option 4 from the main menu. The purpose of this function is to serve as
 
 
 ## Implementation Plan
+
 ## Testing
+
 ## References
+
 
 
 
