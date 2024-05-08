@@ -1,0 +1,51 @@
+
+1. Main Program
+- The main entry point of the application checks if the `habits.csv` file exists.
+- If the file does not exist, it creates a new `habits.csv` file with a header row.
+- The main menu option allows for the user to choose an option.
+- The user can select options to add new habits, edit/delete/mark habits, view activity overview, or access the habits database.
+- After each function call, the control returns to the `Main Menu`, except for the `Quit` option, which terminates the application.
+
+2.  Add habits function:
+- The function starts by  prompting the user to enter a habit name.
+- Then check if the habit already exists in the `habits.csv` file. If the habit exists, it prints a message and returns to the end of the function.
+- If the habit does not exist, it prompts the user to enter a start date and validates the date format.
+- Then the user is prompted to enter the frequency (daily or weekly) and validates the input.
+- The new habit is saved to the `habits.csv` file and prints a success message.
+
+3. Edit/Delete/Log function:
+- The function displays a submenu with options to edit, delete, or mark a habit.
+- Based on the user's selection, it calls the corresponding functions: `edit_habit()`, `delete_habit()`, or `mark_habit()`.
+- After the selected function completes, the control returns to the `EditDeleteLogEnd`submenu.
+
+4. Edit habit function:
+- User prompts to enter the habit name they want to edit.
+- The habit is searched for in the `habits.csv` file.
+- If the habit is found, it prompts the user to enter the new details (name, start date, frequency) and updates the habit in the `habits.csv` file.
+- If the habit is not found, it prints a message and returns to the end of the function.
+
+5. Delete habit function:
+- User prompts to enter the habit name they want to delete.
+- Then remove the row with the matching habit name from the `habits.csv` file.
+- It then prints a success message and returns to the end of the function.
+
+6. Mark habit function:
+- User  prompts to enter the habit name to mark as complete.
+- Then search for the habit in the `habits.csv` file.
+- If the habit is found, it checks if the habit was already marked today using the datetime.now() module.
+- If the habit was not marked today, it increments the "Mark Habit" count in the CSV file.
+- If the habit was already marked today, it prints a message and returns to the end of the function.
+- If the habit is not found, it prints a message and returns to the end of the function.
+
+7. Activity Overview function:
+- The function creates a `PrettyTable` with columns "Habit" and "Log".
+- The read.csv reads the data from the `habits.csv` file.
+- For each row in the CSV file, the row adds the habit name and the "Mark Habit" count to the table.
+- The print(table) prints the completed table.
+
+8. Habits database function:
+- The function creates a `PrettyTable` with a single column "Habits reference list".
+- The data from the `habits_database.csv` file is read with read.csv.
+- For each row in the CSV data, the row adds the habit name to the table.
+- Then print(table) prints a table. 
+- The data is saved in the habits_database and its predetermined. 
