@@ -42,12 +42,12 @@
 The code for this application was written using [PEP 8 - Style Guide for Python](https://peps.python.org/pep-0008/) 
 
 ## Features and Functionality
-There are five features including the main menu and three other features from a ‘submenu’. 
-**Main Menu:** <br> 
+There are five features including the main menu and three other features from a ‘submenu’. <br>
+* **Main Menu:** <br> 
 The main menu is displayed when the application is successfully installed. The other features can be accessed from the main menu loop. 
 The menu options are displayed and the user is prompted to select an option from the main menu. The user input will display the corresponding function, or elif it will gracefully quit the application; else the output will indicate to try again.
 
-**Add new habits:** <br> 
+* **Add new habits:** <br> 
 This is the Option 1 from the main menu. The purpose of this function is to allow the user to add new habits to a CSV file. 
 To check if the CSV file exists there is a code block at the start of main.py. The `os.path.isfile()` function uses the `os.path` module to check if the file already exists; if the file does not exist then it’s created so the habits can be saved to that file. 
 The `add_habit()` feature is wrapped in a try-except block used for error handling.
@@ -56,27 +56,27 @@ Next the code prompts the user to enter a start date for tracking the habit in �
 The code moves to the frequency at which they want to track the habit (daily or weekly).
 Then using the csv.writer object, the file is open in append mode so the data is added without rewriting over any potential existing habits. 
 
-**Edit, Delete or Mark habits:** <br>
-This is option2 from the main menu. This function displays a submenu, explained below. 
+* **Edit, Delete or Mark habits:** <br>
+This is option 2 from the main menu. This function displays a submenu, explained below. 
 The function uses a while loop so the user is asked for input until they select the option to return to the main menu. 
-The user selection will call one of the functions within the submenu. Each function considers potential errors with try-except and also calls a handle_error function. The options for the submenu are explained next:
+The user selection will call one of the functions within the submenu. Each function considers potential errors with try-except and also calls a `handle_error` function. The options for the submenu are explained next:
  * Edit a habit:<br>
 Edit habit is the submenu option 1. Allows the user to edit an existing habit
-The function edit_habit(file_name) calls for the variable file_name, reads the existing habits from the CSV and updates the details if the habit is found. Then writes the updates to the csv file.
+The function `edit_habit(file_name)` calls for the variable `file_name`, reads the existing habits from the CSV and updates the details if the habit is found. Then writes the updates to the csv file.
 
  * Delete a habit:<br>
 From the submenu option 2, this function allows the user to delete an existing habit. The function reads the CSV file, removes the row and then updates the csv file
 
  * Mark a habit:<br>
-From submenu option 3. This function prompts the user to enter a habit they wish to mark off as complete. The habit can be marked once per day. Using the datetime package, datetime.now() it creates a stamp of the current date so the habit can be marked once per day.  After the habit is marked the function includes an incrementing count for a specific habit to be stored in the fourth column (row [3]) of the csv file The changes are then written back to the csv file. 
+From submenu option 3. This function prompts the user to enter a habit they wish to mark off as complete. The habit can be marked once per day. Using the datetime package, `datetime.now()` it creates a stamp of the current date so the habit can be marked once per day.  After the habit is marked the function includes an incrementing count for a specific habit to be stored in the fourth column (row [3]) of the csv file The changes are then written back to the csv file. 
    
-**Activity overview:** <br>
-	This is option 3 from the main menu. The function activity_overview() displays all saved habits and their corresponding logs presenting the data structured as a table. Using the PrettyTable library the data is structured and formatted to present the information as a table. This can be used to analyse the habits further, though a statistics module was not included in the current application. My intention is for the activity_overview function to provide the user with a way of analysing the habits performance. For this reason, only the first column (row 0) and the fourth column (row 3) are displayed in the PrettyTable.
-After the rows have been added, using the print() function the data is displayed as a table.
+* **Activity overview:** <br>
+	This is option 3 from the main menu. The function `activity_overview()` displays all saved habits and their corresponding logs presenting the data structured as a table. Using the PrettyTable library the data is structured and formatted to present the information as a table. This can be used to analyse the habits further, though a statistics module was not included in the current application. My intention is for the `activity_overview()` function to provide the user with a way of analysing the habits performance. For this reason, only the first column (row 0) and the fourth column (row 3) are displayed in the PrettyTable.
+After the rows have been added, using the `print()` function the data is displayed as a table.
 The function is wrapped in a try-except block for ErrorHandling.
 
-**Habits Database:** <br>
-This is option 4 from the main menu. The purpose of this function is to serve as a reference for users to see examples of habits and help with ideas of habits they can track. The data is displayed as a table to make it visually appealing. It uses the csv.reader to read the data from a predefined csv file. The data is passed to PrettyTable printed as a table using the function print() 
+* **Habits Database:** <br>
+This is option 4 from the main menu. The purpose of this function is to serve as a reference for users to see examples of habits and help with ideas of habits they can track. The data is displayed as a table to make it visually appealing. It uses the csv.reader to read the data from a predefined csv file. The data is passed to PrettyTable printed as a table using the function `print()`. 
 
 
 ## Implementation Plan
